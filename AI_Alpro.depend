@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1576050663 source:c:\users\user\documents\19104005\tugas akhir\ai_alpro\main.cpp
+	<iostream>
+	<stdlib.h>
+
+1576050663 
+
+1576656868 source:/home/teguh/Documents/Codeblock/AI_Alpro/main.cpp
+	<iostream>
+	<stdlib.h>
+	<algorithm>
+
