@@ -19,8 +19,15 @@ void cetak_abjad(const string & item) {
 }
 
 void clear() {
-  system("clear");
-  system("CLS");
+  // Jika program berjalan pada arsitektur linux
+  #ifdef linux
+    system("clear");
+  #endif
+
+  // Jika program berjalan pada arsitektur windows
+  #ifdef _WIN32
+    system("CLS");
+  #endif
 }
 
 int sequential_search(string data[], int panjang, string key) {
@@ -76,6 +83,63 @@ int main() {
 
     // Kamus disini
 
+    if (perintah == "Percakapan" || perintah == "percakapan") {
+      int menu_percakapan;
+      clear();
+      cout << "~ Membantu Percakapan Anda Lebih Formal ~" << endl;
+      cout << "1. Kalimat untuk membuka percakapan " << endl;
+      cout << "2. Kalimat untuk menutup percakapan" << endl;
+      cout << "3. Kalimat untuk menyanggah" << endl;
+      cout << "4. kalimat yang digunakan saat menggangu orang" << endl;
+
+
+      cout << endl << "Silahkan Pilih Menu : ";
+      cin >> menu_percakapan;
+
+      switch (menu_percakapan) {
+        case 1:
+            clear();
+            cout << "KALIMAT UNTUK MEMBUKA PERCAKAPAN" << endl << endl;
+            cout << "1. Selamat pagi/siang/sore/malam. Perkenalkan nama saya " << nama << endl;
+            cout << "2. Selamat pagi/siang/sore/malam. Pak/Bu, nama saya " << nama << endl;
+            cout << "3. Selamat pagi/siang/sore/malam. Maaf saya " << nama << ",rasanya kita pernah bertemu sebelumnya" << endl;
+            cout << "4. Selamat pagi/siang/sore/malam. Apakah ada yang bisa saya bantu?" << endl;
+            cout << "5. Permisi, apakah benar anda dengan Bapak/Ibu (nama tujuan)" << endl;
+            cout << "6. Salam kenal Pak/Bu, nama saya " << nama << endl;
+        break;
+
+        case 2 :
+            cout << "KALIMAT UNTUK MENUTUP PERCAKAPAN" << endl << endl;
+            cout << "1. Terima kasih atas kesempatan yang diberikan pada hari ini." << endl;
+            cout << "2. Terima kasih atas Kunjungan Bapak/Ibu/dari Yayasan/Insan/Perusahaan/Organisasi.." << endl;
+            cout << "3. Saya merasa senang dapat berkenalan dengan anda, sampai jumpa lain waktu." << endl;
+            cout << "4. Saya harap kita dapat bertemu di lain waktu." << endl;
+            cout << "5. Sekian dari saya terima kasih." << endl;
+        break;
+
+        case 3 :
+            cout << "KALIMAT UNTUK MENYANGGAH" << endl << endl;
+            cout << "1. Senang berbicara dengan anda/saudara, tetapi saya harus…." << endl;
+            cout << "2. Mungkin kita bisa melanjutkan pembicaraan ini di lain waktu. Maaf ya." << endl;
+            cout << "3. Bagaimana jika kita berbicara lagi nanti. Karena… (apa alasanmu)" << endl;
+            cout << "4. Maaf saat ini saya ada keperluan, kita lanjutkan di lain kesempatan." << endl;
+        break;
+
+        case 4 :
+            cout << "KALIMAT YANG DIGUNAKAN SAAT MENGGANGU ORANG" << endl;
+            cout << "1. Maaf, saya/kami/kita telah mengganggu kesibukan anda, terima kasih." << endl;
+            cout << "2. Terima kasih atas waktu yang telah diberikan/diluangkan." << endl;
+            cout << "3. Maaf, telah menyita waktu anda/Bapak/Ibu" << endl;
+            cout << "4. Maaf, telah merepotkan…" << endl;
+        break;
+
+        default :
+            cout << "Tidak ada menu yang dimaksud" << endl;
+        break;
+
+      }
+    }
+
     if (perintah == "hai" || perintah == "halo") {
       cout << "Hai juga " << nama << endl;
     }
@@ -91,6 +155,19 @@ int main() {
     if (perintah == "selamatsore") {
       cout << "Selamat sore juga " << nama << endl;
     }
+
+    if (perintah == "xSystemInfo" || perintah == "xsysteminfo") {
+        // Jika program berjalan pada arsitektur linux
+        #ifdef linux
+            cout << "Hai " << nama << " kamu sedang menjalankan program ini pada OS Linux" << endl;
+        #endif
+
+        // Jika program berjalan pada arsitektur windows
+        #ifdef _WIN32
+            cout << "Hai " << nama << " kamu sedang menjalankan program ini pada OS Windows" << endl;
+        #endif
+    }
+
 
     if (perintah == "xSorting" || perintah == "xsorting") {
       clear();
