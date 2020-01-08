@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1578464866 source:c:\users\user\documents\19104005\tugas akhir\ai_alpro\main.cpp
+	<iostream>
+	<stdlib.h>
+	<algorithm>
+	<set>
+
